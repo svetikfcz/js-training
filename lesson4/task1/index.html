@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+
+        class ObjectNumber {
+            constructor(units, tens, hundreds) {
+                this.units = units;
+                this.tens = tens;
+                this.hundreds = hundreds;
+            }
+        }
+
+        let number = +prompt("Введите целое число от 0 до 999");
+        //let units, tens, hundreds;
+        if (number == null || Number.isInteger(number) == false || (number < 0 || number > 999)) {
+            console.log("Необходимо ввести целое число в диапазоне от 0 до 999");
+        } else {
+            let arr = String(number).split('');
+            switch (arr.length) {
+                case 1:
+                    arr.unshift('0', '0');
+                    break;
+                case 2:
+                    arr.unshift('0');
+                    break;
+                case 3:
+                    break;
+            }
+            const obj = new ObjectNumber(parseInt(arr[2]), parseInt(arr[1]), parseInt(arr[0]));
+            console.log(number);
+            console.log(obj);
+        }
+        
+    </script>
+</body>
+</html>
