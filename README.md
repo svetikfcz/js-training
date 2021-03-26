@@ -1,1 +1,1 @@
-# online-wardrobe
+# js training tasks
